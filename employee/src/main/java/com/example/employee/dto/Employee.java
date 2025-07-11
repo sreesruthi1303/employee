@@ -1,12 +1,5 @@
 package com.example.employee.dto;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-
-//@Getter
-//@Setter
-//@ToString
 public class Employee {
 	
 	public String getName() {
@@ -15,16 +8,10 @@ public class Employee {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public Long getSalaryPM() {
+	public Double getSalaryPM() {
 		return salaryPM;
 	}
-	public void setSalaryPM(Long salaryPM) {
+	public void setSalaryPM(Double salaryPM) {
 		this.salaryPM = salaryPM;
 	}
 	public String getDepartment() {
@@ -40,16 +27,30 @@ public class Employee {
 		this.tax = tax;
 	}
 	private String name;
-	private int id;
-	private Long salaryPM;
+	private Integer empId;
+	private Double salaryPM;
 	private String department;
 	private int tax;
-	public Employee(String name, int id, Long salaryPM, String department) {
+	private double salaryFinalPA;
+	
+	public Employee(String name, Integer empId, Double salaryPM, String department) {
 		super();
 		this.name = name;
-		this.id = id;
+		this.setEmpId(empId);
 		this.salaryPM = salaryPM;
 		this.department = department;
+	}
+	public Double getSalaryFinalPA() {
+		return salaryFinalPA;
+	}
+	public void setSalaryFinalPA(Double salaryFinalPA) {
+		this.salaryFinalPA = salaryFinalPA;
+	}
+	public Integer getEmpId() {
+		return empId;
+	}
+	public void setEmpId(Integer empId) {
+		this.empId = empId;
 	}
 
 }
